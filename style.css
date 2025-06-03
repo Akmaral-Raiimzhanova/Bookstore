@@ -1,0 +1,668 @@
+/* === Global styles === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    background-color: #e8cdd0;
+}
+
+.main-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* === Individual book card === */
+.book-card {
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.book-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.book-card .author {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.book-card .price {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* - Жанровые секции - */
+.genre-section {
+    margin: 60px 0;
+}
+  
+.genre-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}  
+
+.book-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* === Add to Cart Button === */
+.book-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.book-card button:hover {
+    background-color: #0056b3;
+}
+
+/* === Cart notification === */
+#cart-notify {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+/* === Login form styles === */
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 90px;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.login-container button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.form-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-footer a {
+    text-decoration: none;
+    color: #6a1b9a;
+    font-weight: bold;
+}
+
+.form-footer a:hover {
+    color: #8e24aa;
+}
+
+/* === слово log out ===*/
+.logout-right {
+    float: right;
+    margin-right: 30px;
+}
+  
+.logout-right a {
+    color: #3b168d;
+    font-weight: 500;
+    text-decoration: none;
+}
+  
+.logout-right a:hover {
+    text-decoration: underline;
+}
+  
+/* === Register form styles === */  
+.register-container {
+    max-width: 400px;
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.register-container button {
+    padding: 12px 25px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.register-container button:hover {
+    background-color: #1e7e34;
+}
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* занимает всю высоту экрана */
+}
+
+/* Ссылки входа, регистрации, log out и корзинка */
+.auth-links {
+  text-align: right;
+  padding: 20px 30px 0 0;
+  font-size: 16px;
+}
+
+.cart-link {
+  margin-left: 15px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.2s ease;
+}
+
+.cart-link:hover {
+  transform: scale(1.2);
+  color: #4CAF50;
+}
+
+.book-stand {
+    background: rgb(119, 59, 134) url('../img/stand-bg.png') no-repeat center/cover;
+    color: white;
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}
+  
+.book-stand-text {
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto;
+}
+  
+.book-stand-text h2 {
+    font-size: 26px;
+    line-height: 1.4;
+    margin: 10px 0;
+    color: white;
+    text-transform: uppercase;
+}
+  
+.book-stand-text h2 strong {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+}
+  
+.book-stand-text p {
+    font-size: 18px;
+    color: white;
+    margin-top: 15px;
+    line-height: 1.6;
+    max-width: 100%;
+}
+  
+  
+.book-single {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+  
+.book-single img {
+    width: 100%;
+    max-width: 700px; /* можно увеличить до 500px если нужно */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: rotateY(-4deg);
+    transition: transform 0.3s ease;
+    object-fit: contain;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}  
+  
+.book-single img:hover {
+    transform: scale(1.05) rotateY(0deg);
+}
+  
+.bestseller-label {
+    display: inline-block;
+    font-size: 24px;              /* Увеличили размер */
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: gold;
+    border: 2px solid gold;
+    padding: 6px 16px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    margin-bottom: 20px;          /* Увеличили расстояние до NEW FROM */
+    background-color: transparent;
+    margin-top: -10px;            /* Подняли выше */
+}
+
+  /* Admin Dashboard */
+.admin-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* добавляем это */
+}
+  
+  /* Кнопка добавления */
+.admin-dashboard .btn {
+    display: flex;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background-color: purple;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+  
+  /* Список книг — флекс контейнер */
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+  
+  /* Карточка книги */
+.book-card.admin {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+  
+  /* Изображение книги */
+.book-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+  
+  /* Кнопки вместе */
+.btn-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Delete button */
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* Modify button */
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+/* === Edit Book Form === */
+.edit-container {
+    max-width: 400px;
+    margin: 80px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.edit-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.edit-container input[type="text"],
+.edit-container input[type="number"] {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.edit-container button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.edit-container button:hover {
+    background-color: #0056b3;
+}
+
+.edit-container .form-footer {
+    margin-top: 20px;
+}
+
+.edit-container .form-footer a {
+    text-decoration: none;
+    color: #6a1b9a;
+    font-weight: bold;
+}
+
+.edit-container .form-footer a:hover {
+    color: #8e24aa;
+}
+
+
+/* === Корзина === */
+
+.cart-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 26px;
+    color: #333;
+}
+
+.cart-table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cart-table th {
+    background-color: #f2f2f2;
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+}
+
+.cart-table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table tr:last-child td {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+.cart-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-purchase {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.btn-purchase:hover {
+    background-color: #218838;
+}
+
+.btn-continue {
+    color: purple;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.cart-empty {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+/* === Покупка === */
+.success-box {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.success-box h2 {
+    font-size: 28px;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.success-box p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6a1b9a;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #4a148c;
+}
+
+/* === Стиль поисковика === */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.search-form input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+}
+
+.search-form button {
+    padding: 10px 16px;
+    border: none;
+    background-color: #575757;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+}
+
+/* === Главная страница для админ панеля === */
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 30px 0 30px;
+}
+
+.auth-header .right-part {
+    text-align: right;
+}
+
+/* = Кнопка для админки = */
+.admin-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #553893; /* насыщенно-фиолетовый */
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-button:hover {
+    background-color: #5e2db4;
+}
+
+
+/* = Кнопка вернутся на главный = */
+.back-container {
+    padding: 20px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6a1b9a;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #4a148c;
+}
